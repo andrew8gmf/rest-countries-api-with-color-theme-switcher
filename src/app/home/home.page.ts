@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public selectedTheme;
 
-  constructor() {}
+  constructor(private theme: ThemeService) {
+    this.selectedTheme = 'light';
+    this.dynamicTheme()
+  }
+
+  dynamicTheme() {
+    this.theme.activeTheme(this.selectedTheme);
+  }
 
 }
