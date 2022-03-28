@@ -1,20 +1,51 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="ion-no-padding">
+      Where in the world?
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="moon-outline"></ion-icon>
+        <p>Dark Mode</p>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content fullscreen>
+  <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-searchbar placeholder="Search for a country..."></ion-searchbar>
+      
+      <ion-item slot="end">
+        <ion-label>Filter by Region</ion-label>
+        <ion-select interface="popover">
+          <ion-select-option value="africa">Africa</ion-select-option>
+          <ion-select-option value="america">America</ion-select-option>
+          <ion-select-option value="asia">Asia</ion-select-option>
+          <ion-select-option value="europe">Europe</ion-select-option>
+          <ion-select-option value="oceania">Oceania</ion-select-option>
+        </ion-select>
+      </ion-item>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid class="ion-no-padding">
+    <ion-col class="ion-no-padding">
+      <ion-card class="ion-no-margin">
+        <img src="..." alt="Flag" width="288px" />
+
+        <ion-card-header>
+          <ion-card-title>Country</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-card-subtitle>Population</ion-card-subtitle>
+          <ion-card-subtitle>Region</ion-card-subtitle>
+          <ion-card-subtitle>Capital</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-grid>
 </ion-content>
