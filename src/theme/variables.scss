@@ -74,4 +74,18 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  .light {
+    --ion-background: hsl(0, 0%, 98%);
+    --ion-elements: hsl(0, 0%, 100%);
+    --ion-input: hsl(0, 0%, 52%);
+    --ion-text: hsl(200, 15%, 8%);
+  }
+
+  .dark {
+    --ion-background: hsl(207, 26%, 17%);
+    --ion-elements: hsl(209, 23%, 22%);
+    --ion-input: hsl(0, 0%, 100%);
+    --ion-text: hsl(0, 0%, 100%);
+  }
 }
