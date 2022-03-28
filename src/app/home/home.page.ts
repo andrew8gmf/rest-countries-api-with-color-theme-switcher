@@ -7,15 +7,19 @@ import { ThemeService } from '../theme.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public selectedTheme;
+  public darkMode: boolean = false;
 
   constructor(private theme: ThemeService) {
-    this.selectedTheme = 'light';
-    this.dynamicTheme()
+    this.dynamicTheme();
   }
 
   dynamicTheme() {
-    this.theme.activeTheme(this.selectedTheme);
+    this.theme.activeTheme(this.darkMode);
+  }
+
+  changeTheme() {
+    this.darkMode = !this.darkMode;
+    this.dynamicTheme();
   }
 
 }

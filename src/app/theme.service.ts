@@ -13,6 +13,11 @@ export class ThemeService {
   }
 
   activeTheme(item) {
+    if (!item) {
+      item = 'light';
+    } else {
+      item = 'dark';
+    }
     this.renderer.removeClass(this.document.body, this.currentTheme);
     this.currentTheme = item;
     this.renderer.addClass(this.document.body, item);
