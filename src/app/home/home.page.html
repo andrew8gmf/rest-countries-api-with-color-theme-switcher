@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="ion-no-padding">
-      Where in the world?
+      <strong>Where in the world?</strong>
     </ion-title>
 
     <ion-buttons slot="end">
@@ -17,11 +17,11 @@
 <ion-content fullscreen>
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-searchbar placeholder="Search for a country..."></ion-searchbar>
+      <ion-searchbar class="search-bar" placeholder="Search for a country..."></ion-searchbar>
       
       <ion-item slot="end">
         <ion-label>Filter by Region</ion-label>
-        <ion-select interface="popover">
+        <ion-select [interfaceOptions]="{ cssClass: 'select' }" interface="popover">
           <ion-select-option value="africa">Africa</ion-select-option>
           <ion-select-option value="america">America</ion-select-option>
           <ion-select-option value="asia">Asia</ion-select-option>
