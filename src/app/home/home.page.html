@@ -33,18 +33,18 @@
   </ion-header>
 
   <ion-grid class="ion-no-padding">
-    <ion-col class="ion-no-padding">
+    <ion-col class="ion-no-padding" *ngFor="let country of countries">
       <ion-card class="ion-no-margin">
-        <img src="..." alt="Flag" width="288px" />
+        <img [src]="country.flags.png" alt="Flag" width="100%" height="50%" />
 
         <ion-card-header>
-          <ion-card-title>Country</ion-card-title>
+          <ion-card-title><strong>{{ country.name.official }}</strong></ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          <ion-card-subtitle>Population</ion-card-subtitle>
-          <ion-card-subtitle>Region</ion-card-subtitle>
-          <ion-card-subtitle>Capital</ion-card-subtitle>
+          <ion-card-subtitle><strong>Population:</strong> {{ country.population }}</ion-card-subtitle>
+          <ion-card-subtitle><strong>Region:</strong> {{ country.region }}</ion-card-subtitle>
+          <ion-card-subtitle><strong>Capital:</strong> {{ country.capital }}</ion-card-subtitle>
         </ion-card-content>
       </ion-card>
     </ion-col>
