@@ -17,7 +17,7 @@
 <ion-content>
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-searchbar class="search-bar" placeholder="Search for a country..."></ion-searchbar>
+      <ion-searchbar class="search-bar" placeholder="Search for a country..." [(ngModel)]="filterTerm" (ionChange)="setFilter()"></ion-searchbar>
       
       <ion-item slot="end">
         <ion-label>Filter by Region</ion-label>
@@ -34,9 +34,9 @@
 
   <ion-row class="wrapper">
     <ion-row>
-      <ion-col class="ion-no-padding" *ngFor="let country of countries">
+      <ion-col class="ion-no-padding" *ngFor="let country of filteredCountries">
         <ion-card class="ion-no-margin">
-          <img [src]="country.flags.png" alt="Flag" width="100%" height="50%" />
+          <img [src]="country.flags.png" alt="Flag" width="100%" height="45%" />
   
           <ion-card-header>
             <ion-card-title><strong>{{ country.name.official }}</strong></ion-card-title>
