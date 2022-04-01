@@ -1,21 +1,3 @@
-@mixin flex-wrap-fix($flex-basis, $max-viewport-width: 2000px) {
-  flex-grow: 1;
-  flex-basis: $flex-basis;
-  max-width: 100%;
-
-  $multiplier: 1;
-  $current-width: 0px;
-
-  @while $current-width < $max-viewport-width {
-    $current-width: $current-width + $flex-basis;
-    $multiplier: $multiplier + 1;
-
-    @media(min-width: $flex-basis * $multiplier) {
-      max-width: percentage(1/$multiplier);
-    }
-  }
-}
-
 ion-header {
   ion-toolbar {
     padding: 10px 5%;
@@ -27,21 +9,12 @@ ion-content {
     padding: 35px 5%;
   }
 
-  ion-row.wrapper {
-    display: flex;  
-    flex-wrap: wrap;
+  ion-grid {
+    width: 90%;
     margin: 0 5%;
-    width: auto;
-
-    ion-row {
-      width: auto;
-      margin: -50px;
-
-      ion-col {
-        margin: 50px;
-        height: 450px;
-        @include flex-wrap-fix(380px)
-      }
-    }
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: .8fr;
   }
 }
