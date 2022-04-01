@@ -10,5 +10,9 @@ export class CountryService {
     getAll() {
         return this.http.get(this.baseUrl + 'all?fields=flags,name,population,region,capital');
     }
+
+    getRegion(region) {
+        return this.http.get(this.baseUrl + 'region/' + region);
+    }
     
 }

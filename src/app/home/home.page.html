@@ -21,7 +21,7 @@
       
       <ion-item slot="end">
         <ion-label>Filter by Region</ion-label>
-        <ion-select [interfaceOptions]="{ cssClass: 'select' }" interface="popover">
+        <ion-select [interfaceOptions]="{ cssClass: 'select' }" interface="popover" [(ngModel)]="regionTerm" (ionChange)="setRegion()">
           <ion-select-option value="africa">Africa</ion-select-option>
           <ion-select-option value="america">America</ion-select-option>
           <ion-select-option value="asia">Asia</ion-select-option>

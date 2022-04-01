@@ -10,8 +10,11 @@ import { CountryService } from '../country.service';
 export class HomePage {
   public darkMode: boolean = false;
   countries = [];
-  filterTerm: string;
+  filterTerm: string = '';
   filteredCountries = [];
+
+  regionTerm: string = '';
+  regionCountries = [];
 
   constructor(private theme: ThemeService, private countryService: CountryService) {
     this.dynamicTheme();
@@ -44,6 +47,17 @@ export class HomePage {
   setFilter(){
     this.filteredCountries = this.countries.filter((country) => {
       return country.name.official.toLowerCase().indexOf(this.filterTerm.toLowerCase()) > -1;
+    });
+  }
+
+  setRegion() {
+    console.log(this.regionTerm);
+    this.countryService.getRegion(this.regionTerm).subscribe(countries => {
+      for (var country in countries) {
+        this.regionCountries.push(countries[country]);
+      }
+      this.countries = this.regionCountries;
+      return this.setFilter();
     });
   }
 
