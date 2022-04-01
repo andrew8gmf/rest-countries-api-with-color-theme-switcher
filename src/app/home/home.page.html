@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content>
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-searchbar class="search-bar" placeholder="Search for a country..."></ion-searchbar>
@@ -32,21 +32,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-grid class="ion-no-padding">
-    <ion-col class="ion-no-padding" *ngFor="let country of countries">
-      <ion-card class="ion-no-margin">
-        <img [src]="country.flags.png" alt="Flag" width="100%" height="50%" />
-
-        <ion-card-header>
-          <ion-card-title><strong>{{ country.name.official }}</strong></ion-card-title>
-        </ion-card-header>
-
-        <ion-card-content>
-          <ion-card-subtitle><strong>Population:</strong> {{ country.population }}</ion-card-subtitle>
-          <ion-card-subtitle><strong>Region:</strong> {{ country.region }}</ion-card-subtitle>
-          <ion-card-subtitle><strong>Capital:</strong> {{ country.capital }}</ion-card-subtitle>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-grid>
+  <ion-row class="wrapper">
+    <ion-row>
+      <ion-col class="ion-no-padding" *ngFor="let country of countries">
+        <ion-card class="ion-no-margin">
+          <img [src]="country.flags.png" alt="Flag" width="100%" height="50%" />
+  
+          <ion-card-header>
+            <ion-card-title><strong>{{ country.name.official }}</strong></ion-card-title>
+          </ion-card-header>
+  
+          <ion-card-content>
+            <ion-card-subtitle><strong>Population:</strong> {{ country.population }}</ion-card-subtitle>
+            <ion-card-subtitle><strong>Region:</strong> {{ country.region }}</ion-card-subtitle>
+            <ion-card-subtitle><strong>Capital:</strong> {{ country.capital }}</ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-row>
 </ion-content>

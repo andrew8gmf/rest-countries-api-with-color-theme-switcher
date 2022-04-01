@@ -9,10 +9,20 @@ ion-content {
     padding: 35px 5%;
   }
 
-  ion-grid {
-    padding: 0 5%;
-    display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(4,1fr);
+  ion-row.wrapper {
+    display: flex;  
+    flex-wrap: wrap;
+    margin: 0 5%;
+    width: auto;
+
+    ion-row {
+      width: auto;
+      margin: -50px;
+
+      ion-col {
+        min-width: 288px;
+        margin: 50px;
+      }
+    }
   }
 }
