@@ -8,7 +8,7 @@ export class CountryService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get(this.baseUrl + 'all');
+        return this.http.get(this.baseUrl + 'all?fields=flags,name,population,region,capital');
     }
     
 }
