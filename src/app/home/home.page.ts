@@ -53,7 +53,7 @@ export class HomePage {
   }
 
   setRegion() {
-    console.log(this.regionTerm);
+    this.regionCountries = [];
     this.countryService.getRegion(this.regionTerm).subscribe(countries => {
       for (var country in countries) {
         this.regionCountries.push(countries[country]);
