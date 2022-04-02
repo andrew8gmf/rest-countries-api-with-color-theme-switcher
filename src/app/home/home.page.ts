@@ -8,8 +8,11 @@ import { CountryService } from '../country.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
   public darkMode: boolean = false;
+
   countries = [];
+
   filterTerm: string = '';
   filteredCountries = [];
 
@@ -18,7 +21,7 @@ export class HomePage {
 
   constructor(private theme: ThemeService, private countryService: CountryService) {
     this.dynamicTheme();
-    this.getAll();
+    this.getAllCountries();
   }
 
   dynamicTheme() {
@@ -30,12 +33,11 @@ export class HomePage {
     this.dynamicTheme();
   }
 
-  getAll() {
+  getAllCountries() {
     this.countryService.getAll().subscribe(countries => {
       for (var country in countries) {
         this.countries.push(countries[country]);
       }
-
       return this.countries;
     });
   }
