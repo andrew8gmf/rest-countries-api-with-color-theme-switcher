@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ThemeService } from '../theme.service';
 import { CountryService } from '../country.service';
 
 @Component({
@@ -9,8 +8,6 @@ import { CountryService } from '../country.service';
 })
 export class HomePage {
 
-  public darkMode: boolean = false;
-
   countries = [];
 
   filterTerm: string = '';
@@ -19,18 +16,8 @@ export class HomePage {
   regionTerm: string = '';
   regionCountries = [];
 
-  constructor(private theme: ThemeService, private countryService: CountryService) {
-    this.dynamicTheme();
+  constructor(private countryService: CountryService) {
     this.getAllCountries();
-  }
-
-  dynamicTheme() {
-    this.theme.activeTheme(this.darkMode);
-  }
-
-  changeTheme() {
-    this.darkMode = !this.darkMode;
-    this.dynamicTheme();
   }
 
   getAllCountries() {

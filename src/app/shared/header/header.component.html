@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-no-padding">
+      <strong>Where in the world?</strong>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="changeTheme()">
+        <ion-icon *ngIf="!darkMode" name="moon-outline"></ion-icon>
+        <ion-icon *ngIf="darkMode" name="moon"></ion-icon>
+        <p>Dark Mode</p>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

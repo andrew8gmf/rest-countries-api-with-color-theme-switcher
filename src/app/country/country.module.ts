@@ -8,13 +8,15 @@ import { CountryPageRoutingModule } from './country-routing.module';
 
 import { CountryPage } from './country.page';
 import { DetailComponent } from './detail/detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CountryPageRoutingModule
+    CountryPageRoutingModule,
+    SharedModule
   ],
   declarations: [CountryPage, DetailComponent]
 })
