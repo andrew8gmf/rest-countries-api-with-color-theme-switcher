@@ -14,5 +14,9 @@ export class CountryService {
     getRegion(region) {
         return this.http.get(this.baseUrl + 'region/' + region);
     }
+
+    getName(name) {
+        return this.http.get(this.baseUrl + 'name/' + name);
+    }
     
 }
