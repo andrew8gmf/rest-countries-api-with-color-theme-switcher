@@ -18,9 +18,11 @@
 
       <ion-row class="ion-no-padding">
         <ion-col class="ion-no-padding">
-          <ion-row class="ion-no-padding">
-            <h6><strong>Native Name:</strong></h6>
-            <h6></h6>
+          <ion-row class="ion-no-padding" *ngFor="let lastName of country.name.nativeName | keyvalue; let i=index; let last = last">
+            <h6 *ngIf="last"><strong>Native Name:</strong></h6>
+            <h6 *ngIf="last">
+              {{ lastName.value.common }}
+            </h6>
           </ion-row>
 
           <h6><strong>Population:</strong>{{ country.population }}</h6>
@@ -34,19 +36,19 @@
           
           <ion-row class="ion-no-padding">
             <h6><strong>Currencies:</strong></h6>
-            <h6></h6>
+            <h6 *ngFor="let curr of country.currencies | keyvalue; let i=index">{{ curr.value.name }}</h6>
           </ion-row>
           
           <ion-row class="ion-no-padding">
             <h6><strong>Languages:</strong></h6>
-            <h6></h6>
+            <h6 *ngFor="let lang of country.languages | keyvalue; let i=index">{{ lang.value }}</h6>
           </ion-row>
         </ion-col>
       </ion-row>
 
       <ion-row class="ion-no-padding">
         <h6><strong>Border Countries:</strong> </h6>
-        <ion-button></ion-button>
+        <ion-button *ngFor="let name of country.borders; let i=index">{{ country.borders[i] }}</ion-button>
       </ion-row>
       
     </ion-col>
