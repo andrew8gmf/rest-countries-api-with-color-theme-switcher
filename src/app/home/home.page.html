@@ -20,7 +20,7 @@
 
   <ion-grid class="ion-no-padding">
     <ion-col class="ion-no-padding" *ngFor="let country of filteredCountries">
-      <ion-card class="ion-no-margin">
+      <ion-card class="ion-no-margin" (click)="navigate(country.name.common)">
         <img [src]="country.flags.png" alt="Flag" width="100%" height="45%" />
 
         <ion-card-header>

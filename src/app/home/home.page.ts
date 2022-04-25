@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CountryService } from '../country.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomePage {
   regionTerm: string = '';
   regionCountries = [];
 
-  constructor(private countryService: CountryService) {
+  constructor(private countryService: CountryService, private router: Router) {
     this.getAllCountries();
   }
 
@@ -48,6 +49,10 @@ export class HomePage {
       this.countries = this.regionCountries;
       return this.setFilter();
     });
+  }
+
+  navigate(x){
+    this.router.navigate(['/country/' + x])
   }
 
 }
