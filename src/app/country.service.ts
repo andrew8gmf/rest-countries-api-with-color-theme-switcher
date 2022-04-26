@@ -18,5 +18,9 @@ export class CountryService {
     getName(name) {
         return this.http.get(this.baseUrl + 'name/' + name);
     }
+
+    getCode(code) {
+        return this.http.get(this.baseUrl + 'alpha/' + code);
+    }
     
 }
